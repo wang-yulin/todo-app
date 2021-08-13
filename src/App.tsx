@@ -1,58 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import Headers from './components/headers/Headers';
+import TodoList from './components/todolist/TodoList';
+import Footer from './components/footer/Footer';
+import { TodoItemType } from './components/type';
 
-function App() {
+const App = () => {
+  const todos: TodoItemType [] = [
+    { id: 0, text: 'Learn React', completed: true },
+    { id: 1, text: 'Learn Redux', completed: false, color: 'purple' },
+    { id: 2, text: 'Build something fun!', completed: false, color: 'blue' }
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <nav>
+        <section>
+          <h1>Redux Fundamentals Example</h1>
+        </section>
+      </nav>
+      <main>
+        <section className="medium-container">
+          <h2>Todos</h2>
+          <div className="todoapp">
+            <Headers />
+            <TodoList todos={ todos }/>
+            <Footer todos={ todos }/>
+          </div>
+        </section>
+      </main>
     </div>
-  );
+  )
 }
 
 export default App;
