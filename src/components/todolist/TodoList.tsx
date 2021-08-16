@@ -1,12 +1,23 @@
 import TodoListItem from './TodoListItem';
 import { TodoListType } from '../type';
 
-const TodoList = ({ todos }: TodoListType) => {
+type TodoListProps = {
+    filteredTodos: TodoListType;
+    todos: TodoListType;
+    handleTodos: React.Dispatch<React.SetStateAction<TodoListType>>;
+}
+
+const TodoList = ({ filteredTodos, handleTodos, todos }: TodoListProps) => {
     return (
         <ul className="todo-list">
-          {todos.map(todo => (
-            <TodoListItem key={todo.id} todo={todo} />
-        ))}  
+          {filteredTodos.map(filteredtodo => (
+            <TodoListItem 
+                key={filteredtodo.id} 
+                filteredtodo={filteredtodo} 
+                handleTodos={handleTodos}
+                todos={todos}
+            />
+          ))}  
         </ul>
     )
 }
