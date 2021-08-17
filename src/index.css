@@ -472,6 +472,11 @@ ul.todo-list {
   margin: 5px 6px 10px;
   border-radius: 4px;
   white-space: nowrap;
+  cursor: pointer;
+}
+
+.footer .actions button:hover {
+  background-color: #230de7de;
 }
 
 .todo-count strong {

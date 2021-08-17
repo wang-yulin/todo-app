@@ -1,4 +1,5 @@
 import { TodoItemType, TodoListType } from "../type";
+import { ReactComponent as TimeSolid } from './times-solid.svg'
 
 const availableColors = ['red', 'blue', 'green', 'orange', 'purple'];
 const capitalize = (s:string) => s[0].toUpperCase() + s.slice(1);
@@ -68,7 +69,7 @@ const TodoListItem = ({ filteredtodo, todos, handleTodos }: TodoListItemProps) =
                     className="destroy"
                     onClick={handleDelete}
                 >
-                    Deleted
+                    <TimeSolid />
                 </button>
             </div>
         </li>
